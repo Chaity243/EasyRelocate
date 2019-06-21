@@ -4,12 +4,13 @@ import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.chaitanya.easyrelocate.model.Deliveries
 import com.chaitanya.easyrelocate.model.Post
 import com.chaity.easyrelocate.R
 import com.chaity.easyrelocate.databinding.ItemPostBinding
 
 class DeliveriesListAdapter: RecyclerView.Adapter<DeliveriesListAdapter.ViewHolder>() {
-    private lateinit var postList:List<Post>
+    private lateinit var deliveryList:List<Deliveries>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: ItemPostBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_post, parent, false)
@@ -17,23 +18,23 @@ class DeliveriesListAdapter: RecyclerView.Adapter<DeliveriesListAdapter.ViewHold
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(postList[position])
+        holder.bind(deliveryList[position])
     }
 
     override fun getItemCount(): Int {
-        return if(::postList.isInitialized) postList.size else 0
+        return if(::deliveryList.isInitialized) deliveryList.size else 0
     }
 
-    fun updatePostList(postList:List<Post>){
-        this.postList = postList
+    fun updatePostList(deliveryList:List<Deliveries>){
+        this.deliveryList = deliveryList
         notifyDataSetChanged()
     }
 
     class ViewHolder(private val binding: ItemPostBinding):RecyclerView.ViewHolder(binding.root){
         private val viewModel = DeliveriesViewModel()
 
-        fun bind(post: Post){
-            viewModel.bind(post)
+        fun bind(deliveries: Deliveries){
+            viewModel.bind(deliveries)
             binding.viewModel = viewModel
         }
     }

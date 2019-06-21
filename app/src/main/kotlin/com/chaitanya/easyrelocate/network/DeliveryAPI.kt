@@ -1,5 +1,6 @@
 package com.chaitanya.easyrelocate.network
 
+import com.chaitanya.easyrelocate.model.Deliveries
 import io.reactivex.Observable
 import com.chaitanya.easyrelocate.model.Post
 import retrofit2.http.GET
@@ -7,10 +8,10 @@ import retrofit2.http.GET
 /**
  * The interface which provides methods to get result of webservices
  */
-interface PostApi {
+interface DeliveryAPI {
     /**
      * Get the list of the pots from the API
      */
     @GET("/deliveries")
-    fun getPosts(): Observable<List<Post>>
+    fun getDeliveries(): Observable<List<Deliveries>>
 }

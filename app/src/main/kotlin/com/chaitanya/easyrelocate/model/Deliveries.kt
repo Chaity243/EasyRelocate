@@ -16,6 +16,7 @@ data class Deliveries (
         @field:PrimaryKey
         val id: Int,
         val description: String,
+        val imageUrl: String,
         val location: Location
 
 )

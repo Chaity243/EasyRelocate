@@ -10,5 +10,5 @@ interface DeliveriesDao {
     val all: List<Deliveries>
 
     @Insert
-    fun insertAll(vararg users: Post)
+    fun insertAll(vararg deliveries: Deliveries)
 }

@@ -10,17 +10,17 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.chaitanya.easyrelocate.injection.ViewModelFactory
 import com.chaity.easyrelocate.R
-import com.chaity.easyrelocate.databinding.ActivityPostListBinding
+
 
 class DeliveriesListActivity: AppCompatActivity() {
-    private lateinit var binding: ActivityPostListBinding
+    private lateinit var binding: DeliveriesListActivity
     private lateinit var viewModel: DeliveriesListViewModel
     private var errorSnackbar: Snackbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_post_list)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_delivery_list)
         binding.postList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         viewModel = ViewModelProviders.of(this, ViewModelFactory(this)).get(DeliveriesListViewModel::class.java)
