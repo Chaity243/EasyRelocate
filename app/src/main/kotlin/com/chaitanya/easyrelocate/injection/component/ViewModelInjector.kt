@@ -14,12 +14,12 @@ import javax.inject.Singleton
 interface ViewModelInjector {
     /**
      * Injects required dependencies into the specified DeliveriesListViewModel.
-     * @param postListViewModel DeliveriesListViewModel in which to inject the dependencies
+     * @param deliveryListViewModel DeliveriesListViewModel in which to inject the dependencies
      */
     fun inject(postListViewModel: DeliveriesListViewModel)
     /**
      * Injects required dependencies into the specified DeliveriesViewModel.
-     * @param postViewModel DeliveriesViewModel in which to inject the dependencies
+     * @param deliveryViewModel DeliveriesViewModel in which to inject the dependencies
      */
     fun inject(postViewModel: DeliveriesViewModel)
 

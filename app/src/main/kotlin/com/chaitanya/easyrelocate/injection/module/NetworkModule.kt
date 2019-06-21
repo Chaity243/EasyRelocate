@@ -6,6 +6,8 @@ import dagger.Reusable
 import io.reactivex.schedulers.Schedulers
 import com.chaitanya.easyrelocate.network.DeliveryAPI
 import com.chaitanya.easyrelocate.utils.BASE_URL
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -16,7 +18,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 @Module
 // Safe here as we are dealing with a Dagger 2 module
 @Suppress("unused")
-object NetworkModule {
+object  NetworkModule {
     /**
      * Provides the Post service implementation.
      * @param retrofit the Retrofit object used to instantiate the service
@@ -29,6 +31,14 @@ object NetworkModule {
         return retrofit.create(DeliveryAPI::class.java)
     }
 
+
+
+
+
+
+    var interceptor =  HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+    var client =  OkHttpClient.Builder().addInterceptor(interceptor).build();
+
     /**
      * Provides the Retrofit object.
      * @return the Retrofit object
@@ -40,6 +50,7 @@ object NetworkModule {
         return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(MoshiConverterFactory.create())
+                .client(client)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
                 .build()
     }
