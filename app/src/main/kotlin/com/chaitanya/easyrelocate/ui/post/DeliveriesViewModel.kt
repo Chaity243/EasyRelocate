@@ -4,7 +4,7 @@ import android.arch.lifecycle.MutableLiveData
 import com.chaitanya.easyrelocate.base.BaseViewModel
 import com.chaitanya.easyrelocate.model.Post
 
-class PostViewModel: BaseViewModel() {
+class DeliveriesViewModel: BaseViewModel() {
     private val postTitle = MutableLiveData<String>()
     private val postBody = MutableLiveData<String>()
 

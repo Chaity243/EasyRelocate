@@ -13,10 +13,10 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class PostListViewModel(private val postDao: PostDao): BaseViewModel(){
+class DeliveriesListViewModel(private val postDao: PostDao): BaseViewModel(){
     @Inject
     lateinit var postApi: PostApi
-    val postListAdapter: PostListAdapter = PostListAdapter()
+    val postListAdapter: DeliveriesListAdapter = DeliveriesListAdapter()
 
     val loadingVisibility: MutableLiveData<Int> = MutableLiveData()
     val errorMessage:MutableLiveData<Int> = MutableLiveData()

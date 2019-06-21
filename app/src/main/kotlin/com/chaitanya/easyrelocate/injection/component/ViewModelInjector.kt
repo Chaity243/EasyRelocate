@@ -2,8 +2,8 @@ package com.chaitanya.easyrelocate.injection.component
 
 import dagger.Component
 import com.chaitanya.easyrelocate.injection.module.NetworkModule
-import com.chaitanya.easyrelocate.ui.post.PostListViewModel
-import com.chaitanya.easyrelocate.ui.post.PostViewModel
+import com.chaitanya.easyrelocate.ui.post.DeliveriesListViewModel
+import com.chaitanya.easyrelocate.ui.post.DeliveriesViewModel
 import javax.inject.Singleton
 
 /**
@@ -13,15 +13,15 @@ import javax.inject.Singleton
 @Component(modules = [(NetworkModule::class)])
 interface ViewModelInjector {
     /**
-     * Injects required dependencies into the specified PostListViewModel.
-     * @param postListViewModel PostListViewModel in which to inject the dependencies
+     * Injects required dependencies into the specified DeliveriesListViewModel.
+     * @param postListViewModel DeliveriesListViewModel in which to inject the dependencies
      */
-    fun inject(postListViewModel: PostListViewModel)
+    fun inject(postListViewModel: DeliveriesListViewModel)
     /**
-     * Injects required dependencies into the specified PostViewModel.
-     * @param postViewModel PostViewModel in which to inject the dependencies
+     * Injects required dependencies into the specified DeliveriesViewModel.
+     * @param postViewModel DeliveriesViewModel in which to inject the dependencies
      */
-    fun inject(postViewModel: PostViewModel)
+    fun inject(postViewModel: DeliveriesViewModel)
 
     @Component.Builder
     interface Builder {

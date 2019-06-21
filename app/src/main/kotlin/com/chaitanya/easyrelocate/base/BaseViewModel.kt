@@ -4,8 +4,8 @@ import android.arch.lifecycle.ViewModel
 import com.chaitanya.easyrelocate.injection.component.DaggerViewModelInjector
 import com.chaitanya.easyrelocate.injection.component.ViewModelInjector
 import com.chaitanya.easyrelocate.injection.module.NetworkModule
-import com.chaitanya.easyrelocate.ui.post.PostListViewModel
-import com.chaitanya.easyrelocate.ui.post.PostViewModel
+import com.chaitanya.easyrelocate.ui.post.DeliveriesListViewModel
+import com.chaitanya.easyrelocate.ui.post.DeliveriesViewModel
 
 abstract class BaseViewModel:ViewModel(){
     private val injector: ViewModelInjector = DaggerViewModelInjector
@@ -22,8 +22,8 @@ abstract class BaseViewModel:ViewModel(){
      */
     private fun inject() {
         when (this) {
-            is PostListViewModel -> injector.inject(this)
-            is PostViewModel -> injector.inject(this)
+            is DeliveriesListViewModel -> injector.inject(this)
+            is DeliveriesViewModel -> injector.inject(this)
         }
     }
 }

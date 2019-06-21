@@ -12,9 +12,9 @@ import com.chaitanya.easyrelocate.injection.ViewModelFactory
 import com.chaity.easyrelocate.R
 import com.chaity.easyrelocate.databinding.ActivityPostListBinding
 
-class PostListActivity: AppCompatActivity() {
+class DeliveriesListActivity: AppCompatActivity() {
     private lateinit var binding: ActivityPostListBinding
-    private lateinit var viewModel: PostListViewModel
+    private lateinit var viewModel: DeliveriesListViewModel
     private var errorSnackbar: Snackbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?){
@@ -23,7 +23,7 @@ class PostListActivity: AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_post_list)
         binding.postList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        viewModel = ViewModelProviders.of(this, ViewModelFactory(this)).get(PostListViewModel::class.java)
+        viewModel = ViewModelProviders.of(this, ViewModelFactory(this)).get(DeliveriesListViewModel::class.java)
         viewModel.errorMessage.observe(this, Observer {
             errorMessage -> if(errorMessage != null) showError(errorMessage) else hideError()
         })

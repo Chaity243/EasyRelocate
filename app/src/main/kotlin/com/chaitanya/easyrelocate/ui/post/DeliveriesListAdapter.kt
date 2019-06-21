@@ -8,7 +8,7 @@ import com.chaitanya.easyrelocate.model.Post
 import com.chaity.easyrelocate.R
 import com.chaity.easyrelocate.databinding.ItemPostBinding
 
-class PostListAdapter: RecyclerView.Adapter<PostListAdapter.ViewHolder>() {
+class DeliveriesListAdapter: RecyclerView.Adapter<DeliveriesListAdapter.ViewHolder>() {
     private lateinit var postList:List<Post>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,7 +30,7 @@ class PostListAdapter: RecyclerView.Adapter<PostListAdapter.ViewHolder>() {
     }
 
     class ViewHolder(private val binding: ItemPostBinding):RecyclerView.ViewHolder(binding.root){
-        private val viewModel = PostViewModel()
+        private val viewModel = DeliveriesViewModel()
 
         fun bind(post: Post){
             viewModel.bind(post)
