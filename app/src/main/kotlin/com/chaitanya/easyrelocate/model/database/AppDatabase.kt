@@ -6,12 +6,9 @@ import android.arch.persistence.room.TypeConverters
 import com.chaitanya.easyrelocate.model.AppConverter.Converters
 import com.chaitanya.easyrelocate.model.Deliveries
 import com.chaitanya.easyrelocate.model.DeliveriesDao
-import com.chaitanya.easyrelocate.model.Post
-import com.chaitanya.easyrelocate.model.PostDao
 
-@Database(entities = [Post::class, Deliveries::class], version = 1)
+@Database(entities = [Deliveries::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun postDao(): PostDao
     abstract fun deliveriesDao(): DeliveriesDao
 }

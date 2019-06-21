@@ -36,14 +36,14 @@ class DeliveriesListViewModel(private val deliveriesDao: DeliveriesDao): BaseVie
     private fun loadDeliveries(){
         subscription = Observable.fromCallable { deliveriesDao.all }
                 .concatMap {
-                    dbPostList ->
-                    if(dbPostList.isEmpty())
+                    dbDeliveryList ->
+                    if(dbDeliveryList.isEmpty())
                         deliveryAPI.getDeliveries().concatMap {
-                            apiPostList -> deliveriesDao.insertAll(*apiPostList.toTypedArray())
-                            Observable.just(apiPostList)
+                            apiDeliveryList -> deliveriesDao.insertAll(*apiDeliveryList.toTypedArray())
+                            Observable.just(apiDeliveryList)
                         }
                     else
-                        Observable.just(dbPostList)
+                        Observable.just(dbDeliveryList)
                 }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

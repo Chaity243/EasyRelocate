@@ -5,15 +5,15 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.chaitanya.easyrelocate.model.Deliveries
-import com.chaitanya.easyrelocate.model.Post
 import com.chaity.easyrelocate.R
-import com.chaity.easyrelocate.databinding.ItemPostBinding
+import com.chaity.easyrelocate.databinding.ItemDeliveryBinding
+
 
 class DeliveriesListAdapter: RecyclerView.Adapter<DeliveriesListAdapter.ViewHolder>() {
     private lateinit var deliveryList:List<Deliveries>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding: ItemPostBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_post, parent, false)
+        val binding: ItemDeliveryBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_delivery, parent, false)
         return ViewHolder(binding)
     }
 
@@ -30,7 +30,7 @@ class DeliveriesListAdapter: RecyclerView.Adapter<DeliveriesListAdapter.ViewHold
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: ItemPostBinding):RecyclerView.ViewHolder(binding.root){
+    class ViewHolder(private val binding: ItemDeliveryBinding):RecyclerView.ViewHolder(binding.root){
         private val viewModel = DeliveriesViewModel()
 
         fun bind(deliveries: Deliveries){

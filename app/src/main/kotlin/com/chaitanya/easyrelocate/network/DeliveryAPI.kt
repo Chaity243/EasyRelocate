@@ -2,7 +2,6 @@ package com.chaitanya.easyrelocate.network
 
 import com.chaitanya.easyrelocate.model.Deliveries
 import io.reactivex.Observable
-import com.chaitanya.easyrelocate.model.Post
 import retrofit2.http.GET
 
 /**

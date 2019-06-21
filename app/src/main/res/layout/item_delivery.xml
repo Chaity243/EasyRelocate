@@ -15,7 +15,7 @@
         android:paddingRight="16dp">
 
         <TextView
-            android:id="@+id/post_title"
+            android:id="@+id/delivery_desciption"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -25,13 +25,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/post_body"
+            android:id="@+id/delivery_image"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:mutableText="@{viewModel.getDeliveryImage()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/post_title" />
+            app:layout_constraintTop_toBottomOf="@+id/delivery_desciption" />
     </android.support.constraint.ConstraintLayout>
 </layout>
