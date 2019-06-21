@@ -10,10 +10,11 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.chaitanya.easyrelocate.injection.ViewModelFactory
 import com.chaity.easyrelocate.R
+import com.chaity.easyrelocate.databinding.ActivityDeliveryListBinding
 
 
 class DeliveriesListActivity: AppCompatActivity() {
-    private lateinit var binding: DeliveriesListActivity
+    private lateinit var binding: ActivityDeliveryListBinding
     private lateinit var viewModel: DeliveriesListViewModel
     private var errorSnackbar: Snackbar? = null
 
