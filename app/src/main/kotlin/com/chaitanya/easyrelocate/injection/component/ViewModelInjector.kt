@@ -16,12 +16,12 @@ interface ViewModelInjector {
      * Injects required dependencies into the specified DeliveriesListViewModel.
      * @param deliveryListViewModel DeliveriesListViewModel in which to inject the dependencies
      */
-    fun inject(postListViewModel: DeliveriesListViewModel)
+    fun inject(deliveryListViewModel: DeliveriesListViewModel)
     /**
      * Injects required dependencies into the specified DeliveriesViewModel.
      * @param deliveryViewModel DeliveriesViewModel in which to inject the dependencies
      */
-    fun inject(postViewModel: DeliveriesViewModel)
+    fun inject(deliveryViewModel: DeliveriesViewModel)
 
     @Component.Builder
     interface Builder {

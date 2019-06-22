@@ -9,7 +9,7 @@ import retrofit2.http.GET
  */
 interface DeliveryAPI {
     /**
-     * Get the list of the pots from the API
+     * Get the list of the deliveries from the API
      */
     @GET("/deliveries")
     fun getDeliveries(): Observable<List<Deliveries>>
