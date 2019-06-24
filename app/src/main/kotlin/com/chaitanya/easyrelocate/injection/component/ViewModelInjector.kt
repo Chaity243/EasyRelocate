@@ -32,5 +32,5 @@ interface ViewModelInjector {
     }
 
 
-    fun getDeliveryAPIInterface() : DeliveryAPI
+    fun providePostApi() : DeliveryAPI
 }

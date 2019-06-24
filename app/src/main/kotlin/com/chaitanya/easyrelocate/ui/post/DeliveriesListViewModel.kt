@@ -1,13 +1,13 @@
 package com.chaitanya.easyrelocate.ui.post
 
 import android.arch.lifecycle.MutableLiveData
+import android.util.Log
 import android.view.View
 import com.chaitanya.easyrelocate.base.BaseViewModel
 import com.chaitanya.easyrelocate.model.Deliveries
 import com.chaitanya.easyrelocate.model.DeliveriesDao
 import com.chaitanya.easyrelocate.network.DeliveryAPI
 import com.chaity.easyrelocate.R
-import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -53,7 +53,7 @@ class DeliveriesListViewModel(private val deliveriesDao: DeliveriesDao): BaseVie
                 .doOnTerminate { onRetrieveDeliveryListFinish() }
                 .subscribe(
                         { result -> onRetrieveDeliveryListSuccess(result) },
-                        { onRetrieveDeliveryListError() }
+                        { error-> onRetrieveDeliveryListError(error) }
                 )
     }
 
@@ -70,7 +70,8 @@ class DeliveriesListViewModel(private val deliveriesDao: DeliveriesDao): BaseVie
         deliveryListAdapter.updatePostList(deliveryList)
     }
 
-    private fun onRetrieveDeliveryListError(){
+    private fun onRetrieveDeliveryListError(error: Throwable) {
+        Log.e("onRetrieveDeliveryListError: ", error.localizedMessage)
         errorMessage.value = R.string.post_error
     }
 }
