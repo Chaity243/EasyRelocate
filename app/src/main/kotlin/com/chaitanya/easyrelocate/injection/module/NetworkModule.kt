@@ -32,12 +32,8 @@ object  NetworkModule {
     }
 
 
-
-
-
-
-    var interceptor =  HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-    var client =  OkHttpClient.Builder().addInterceptor(interceptor).build();
+    var interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+    var client = OkHttpClient.Builder().addInterceptor(interceptor).build();
 
     /**
      * Provides the Retrofit object.
@@ -54,4 +50,15 @@ object  NetworkModule {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
                 .build()
     }
+
+
+    /* @Provides
+    @Reusable
+    @JvmStatic
+
+    fun getDeliveryAPIInterface(retroFit: Retrofit): DeliveryAPI {
+        return retroFit.create<DeliveryAPI>(DeliveryAPI::class.java)
+    }
+}*/
+
 }

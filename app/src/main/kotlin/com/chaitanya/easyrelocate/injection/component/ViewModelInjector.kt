@@ -2,6 +2,7 @@ package com.chaitanya.easyrelocate.injection.component
 
 import dagger.Component
 import com.chaitanya.easyrelocate.injection.module.NetworkModule
+import com.chaitanya.easyrelocate.network.DeliveryAPI
 import com.chaitanya.easyrelocate.ui.post.DeliveriesListViewModel
 import com.chaitanya.easyrelocate.ui.post.DeliveriesViewModel
 import javax.inject.Singleton
@@ -29,4 +30,7 @@ interface ViewModelInjector {
 
         fun networkModule(networkModule: NetworkModule): Builder
     }
+
+
+    fun getDeliveryAPIInterface() : DeliveryAPI
 }
