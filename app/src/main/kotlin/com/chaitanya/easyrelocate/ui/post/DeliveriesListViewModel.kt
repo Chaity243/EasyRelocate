@@ -1,6 +1,7 @@
 package com.chaitanya.easyrelocate.ui.post
 
 import android.arch.lifecycle.MutableLiveData
+import android.util.Log
 import android.view.View
 import com.chaitanya.easyrelocate.base.BaseViewModel
 import com.chaitanya.easyrelocate.model.Deliveries
@@ -34,16 +35,35 @@ class DeliveriesListViewModel(private val deliveriesDao: DeliveriesDao): BaseVie
     }
 
     private fun loadDeliveries(){
+       /*     subscription = Observable.fromCallable { deliveriesDao.all }
+                    .concatMap {
+                        dbDeliveryList ->
+                        if(dbDeliveryList.isEmpty())
+                            deliveryAPI.getDeliveries().concatMap {
+                                apiDeliveryList -> deliveriesDao.insertAll(*apiDeliveryList.toTypedArray())
+                                Observable.just(apiDeliveryList)
+                            }
+                        else
+                            Observable.just(dbDeliveryList)
+                    }
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .doOnSubscribe { onRetrieveDeliveryListStart() }
+                    .doOnTerminate { onRetrieveDeliveryListFinish() }
+                    .subscribe(
+                            { result -> onRetrieveDeliveryListSuccess(result) },
+                            { onRetrieveDeliveryListError() }
+                    )*/
+
+
+
+
         subscription = Observable.fromCallable { deliveriesDao.all }
                 .concatMap {
-                    dbDeliveryList ->
-                    if(dbDeliveryList.isEmpty())
-                        deliveryAPI.getDeliveries().concatMap {
-                            apiDeliveryList -> deliveriesDao.insertAll(*apiDeliveryList.toTypedArray())
-                            Observable.just(apiDeliveryList)
-                        }
-                    else
-                        Observable.just(dbDeliveryList)
+
+                    deliveryAPI.getDeliveries()
+
+
                 }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -53,6 +73,8 @@ class DeliveriesListViewModel(private val deliveriesDao: DeliveriesDao): BaseVie
                         { result -> onRetrieveDeliveryListSuccess(result) },
                         { onRetrieveDeliveryListError() }
                 )
+
+
     }
 
     private fun onRetrieveDeliveryListStart(){
