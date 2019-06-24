@@ -25,4 +25,6 @@ class DeliveriesViewModel: BaseViewModel() {
     fun getDeliveryImage():MutableLiveData<String>{
         return deliveryImg
     }
+
+
 }

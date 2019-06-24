@@ -82,4 +82,7 @@ dependencies {
     //GSON  for storing non -primitive type in DB
     implementation 'com.google.code.gson:gson:2.6.2'
 
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

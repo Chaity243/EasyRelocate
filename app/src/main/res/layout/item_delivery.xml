@@ -19,18 +19,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-
+android:text="sample 1"
             app:mutableText="@{viewModel.getDeliveryDescription()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <ImageView
             android:id="@+id/delivery_image"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:mutableText="@{viewModel.getDeliveryImage()}"
+            android:src="@drawable/ic_error_outline_black_24dp"
+            app:mutableText="@{viewModel.imageUrl}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/delivery_desciption" />
