@@ -1,4 +1,4 @@
-package com.chaitanya.easyrelocate.model.AppConverter;
+package com.chaitanya.easyrelocate.AppConverter;
 
 import androidx.room.TypeConverter;
 

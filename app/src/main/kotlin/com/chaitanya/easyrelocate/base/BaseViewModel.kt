@@ -1,6 +1,6 @@
 package com.chaitanya.easyrelocate.base
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.chaitanya.easyrelocate.injection.component.DaggerViewModelInjector
 import com.chaitanya.easyrelocate.injection.component.ViewModelInjector
 import com.chaitanya.easyrelocate.injection.module.NetworkModule

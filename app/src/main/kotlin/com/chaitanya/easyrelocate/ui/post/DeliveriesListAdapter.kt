@@ -1,7 +1,7 @@
 package com.chaitanya.easyrelocate.ui.post
 
-import android.databinding.DataBindingUtil
-import android.support.v7.widget.RecyclerView
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.chaitanya.easyrelocate.model.Deliveries
@@ -30,7 +30,7 @@ class DeliveriesListAdapter: RecyclerView.Adapter<DeliveriesListAdapter.ViewHold
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: ItemDeliveryBinding):RecyclerView.ViewHolder(binding.root){
+    class ViewHolder(private val binding: ItemDeliveryBinding): RecyclerView.ViewHolder(binding.root){
         private val viewModel = DeliveriesViewModel()
 
         fun bind(deliveries: Deliveries){

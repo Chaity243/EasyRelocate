@@ -1,13 +1,16 @@
 package com.chaitanya.easyrelocate.model
 
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.Query
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.paging.DataSource
+
 
 @Dao
 interface DeliveriesDao {
     @get:Query("SELECT * FROM  Deliveries")
-    val all: List<Deliveries>
+    val all: DataSource.Factory<Int,Deliveries>
+
 
     @Insert
     fun insertAll(vararg deliveries: Deliveries)

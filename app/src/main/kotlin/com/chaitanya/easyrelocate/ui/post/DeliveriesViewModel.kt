@@ -1,6 +1,6 @@
 package com.chaitanya.easyrelocate.ui.post
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import com.chaitanya.easyrelocate.base.BaseViewModel
 import com.chaitanya.easyrelocate.model.Deliveries
 
