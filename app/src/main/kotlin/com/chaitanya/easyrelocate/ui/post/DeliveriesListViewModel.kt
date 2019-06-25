@@ -3,6 +3,7 @@ package com.chaitanya.easyrelocate.ui.post
 import android.arch.lifecycle.MutableLiveData
 import android.util.Log
 import android.view.View
+
 import com.chaitanya.easyrelocate.base.BaseViewModel
 import com.chaitanya.easyrelocate.model.Deliveries
 import com.chaitanya.easyrelocate.model.DeliveriesDao
@@ -71,7 +72,7 @@ class DeliveriesListViewModel(private val deliveriesDao: DeliveriesDao): BaseVie
     }
 
     private fun onRetrieveDeliveryListError(error: Throwable) {
-        Log.e("onRetrieveDeliveryListError: ", error.localizedMessage)
+        Log.e("onRetrieveDelListErr: ", error.localizedMessage)
         errorMessage.value = R.string.post_error
     }
 }

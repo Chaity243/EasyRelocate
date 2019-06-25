@@ -54,7 +54,7 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$android_support_version"
 
     // Constraint Layout
-    implementation "com.android.support.constraint:constraint-layout:1.1.3"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     // LiveData & ViewModel
     implementation"android.arch.lifecycle:extensions:$lifecycle_version"
